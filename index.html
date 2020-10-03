@@ -14,22 +14,12 @@
 
         window.onload = () => {
 
-            const c = document.querySelector("#carousel-container");
+            const carousel = document.querySelector("#carousel-container");
             const link = document.querySelectorAll(".link");
 
             const imageContainer = document.getElementById('img-container');
             const image = document.getElementById('image');
 
-
-
-            /*  link.addEventListener('mousemove', function(e){
-                  imageContainer.style.display = "inline-block";
-                  var x = e.clientX;
-                  var y = e.clientY; 
-                  imageContainer.style.left = x + "px";
-                  imageContainer.style.top = y + "px";
-  
-              }); */
 
 
             const showImage = (e) => {
@@ -41,6 +31,7 @@
                 imageContainer.style.left = x + "px";
                 imageContainer.style.top = y + "px";
 
+               
             }
 
             var i;
@@ -50,9 +41,14 @@
 
                 link[0].onmousemove = () => {
                     image.src = "picture.jpeg";
-
                         link[0].style.color = "white";
-                   
+
+                        link[1].style.opacity = "0.5";
+                        link[2].style.opacity = "0.5";
+                        link[3].style.opacity = "0.5";
+                        link[4].style.opacity = "0.5";
+                        link[5].style.opacity = "0.5";
+                       
                 }
                 
 
@@ -64,10 +60,27 @@
                         image.style.display = "none";
                         link[0].style.color = "#fcc99d";
                     }, 20);
+
+                    link[1].style.opacity = "1";
+                    link[5].style.opacity = "1";
+
+                    carousel.style.backgroundColor = "#f87a0c";
+
+                        link[1].style.opacity = "1";
+                        link[2].style.opacity = "1";
+                        link[3].style.opacity = "1";
+                        link[4].style.opacity = "1";
+                        link[5].style.opacity = "1";
                 }
 
                 link[1].onmousemove = () => {
                     image.src = "girl.jpg"
+
+                    link[0].style.opacity = "0.5";
+                        link[2].style.opacity = "0.5";
+                        link[3].style.opacity = "0.5";
+                        link[4].style.opacity = "0.5";
+                        link[5].style.opacity = "0.5";
                 }
 
                 link[1].onmouseleave = () => {
@@ -76,10 +89,22 @@
                     setTimeout(() => {
                         image.style.display = "none";
                     }, 300);
+
+                    link[0].style.opacity = "1";
+                        link[2].style.opacity = "1";
+                        link[3].style.opacity = "1";
+                        link[4].style.opacity = "1";
+                        link[5].style.opacity = "1";
                 }
 
                 link[2].onmousemove = () => {
                     image.src = "picture.jpeg"
+
+                    link[1].style.opacity = "0.5";
+                        link[0].style.opacity = "0.5";
+                        link[3].style.opacity = "0.5";
+                        link[4].style.opacity = "0.5";
+                        link[5].style.opacity = "0.5";
                 }
 
                 link[2].onmouseleave = () => {
@@ -88,10 +113,22 @@
                     setTimeout(() => {
                         image.style.display = "none";
                     }, 300);
+
+                    link[1].style.opacity = "1";
+                        link[0].style.opacity = "1";
+                        link[3].style.opacity = "1";
+                        link[4].style.opacity = "1";
+                        link[5].style.opacity = "1";
                 }
 
                 link[3].onmousemove = () => {
                     image.src = "girl.jpg"
+
+                    link[1].style.opacity = "0.5";
+                        link[2].style.opacity = "0.5";
+                        link[0].style.opacity = "0.5";
+                        link[4].style.opacity = "0.5";
+                        link[5].style.opacity = "0.5";
                 }
 
                 link[3].onmouseleave = () => {
@@ -100,10 +137,22 @@
                     setTimeout(() => {
                         image.style.display = "none";
                     }, 300);
+
+                    link[1].style.opacity = "1";
+                        link[2].style.opacity = "1";
+                        link[0].style.opacity = "1";
+                        link[4].style.opacity = "1";
+                        link[5].style.opacity = "1";
                 }
 
                 link[4].onmousemove = () => {
                     image.src = "picture.jpeg"
+
+                    link[1].style.opacity = "0.5";
+                        link[2].style.opacity = "0.5";
+                        link[3].style.opacity = "0.5";
+                        link[0].style.opacity = "0.5";
+                        link[5].style.opacity = "0.5";
                 }
 
                 link[4].onmouseleave = () => {
@@ -112,10 +161,22 @@
                     setTimeout(() => {
                         image.style.display = "none";
                     }, 300);
+
+                    link[1].style.opacity = "1";
+                        link[2].style.opacity = "1";
+                        link[3].style.opacity = "1";
+                        link[0].style.opacity = "1";
+                        link[5].style.opacity = "1";
                 }
 
                 link[5].onmousemove = () => {
                     image.src = "girl.jpg"
+
+                    link[1].style.opacity = "0.5";
+                        link[2].style.opacity = "0.5";
+                        link[3].style.opacity = "0.5";
+                        link[4].style.opacity = "0.5";
+                        link[0].style.opacity = "0.5";
                 }
 
                 link[5].onmouseleave = () => {
@@ -125,17 +186,15 @@
                         image.style.display = "none";
                     }, 300);
 
+                    link[1].style.opacity = "1";
+                        link[2].style.opacity = "1";
+                        link[3].style.opacity = "1";
+                        link[4].style.opacity = "1";
+                        link[0].style.opacity = "1";
+
                 }
 
-
-
-
             }
-
-
-
-
-
 
         }
 
@@ -163,6 +222,7 @@
         #carousel-container {
             background-color: #f87a0c;
             height: 100vh;
+            transition: 0.2s ease-in-out;
         }
 
         .carousel {

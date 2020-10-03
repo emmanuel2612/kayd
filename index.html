@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+
+    <script>
+
+        window.onload = () => {
+
+            const c = document.querySelector("#carousel-container");
+            const link = document.querySelectorAll(".link");
+
+            const imageContainer = document.getElementById('img-container');
+            const image = document.getElementById('image');
+
+
+
+            /*  link.addEventListener('mousemove', function(e){
+                  imageContainer.style.display = "inline-block";
+                  var x = e.clientX;
+                  var y = e.clientY; 
+                  imageContainer.style.left = x + "px";
+                  imageContainer.style.top = y + "px";
+  
+              }); */
+
+
+            const showImage = (e) => {
+                imageContainer.style.display = "inline-block";
+                image.style.opacity = "1";
+                image.style.display = "inline-block";
+                var x = e.clientX;
+                var y = e.clientY;
+                imageContainer.style.left = x + "px";
+                imageContainer.style.top = y + "px";
+
+            }
+
+            var i;
+            for (i = 0; i < link.length; i++) {
+
+                link[i].addEventListener('mousemove', showImage);
+
+                link[0].onmousemove = () => {
+                    image.src = "picture.jpeg"
+                }
+
+                link[0].onmouseleave = () => {
+
+                    image.style.opacity = "0";
+
+                    setTimeout(() => {
+                        image.style.display = "none";
+                    }, 300);
+                }
+
+                link[1].onmousemove = () => {
+                    image.src = "girl.jpg"
+                }
+
+                link[1].onmouseleave = () => {
+                    image.style.opacity = "0";
+
+                    setTimeout(() => {
+                        image.style.display = "none";
+                    }, 300);
+                }
+
+                link[2].onmousemove = () => {
+                    image.src = "picture.jpeg"
+                }
+
+                link[2].onmouseleave = () => {
+                    image.style.opacity = "0";
+
+                    setTimeout(() => {
+                        image.style.display = "none";
+                    }, 300);
+                }
+
+                link[3].onmousemove = () => {
+                    image.src = "girl.jpg"
+                }
+
+                link[3].onmouseleave = () => {
+                    image.style.opacity = "0";
+
+                    setTimeout(() => {
+                        image.style.display = "none";
+                    }, 300);
+                }
+
+                link[4].onmousemove = () => {
+                    image.src = "picture.jpeg"
+                }
+
+                link[4].onmouseleave = () => {
+                    image.style.opacity = "0";
+
+                    setTimeout(() => {
+                        image.style.display = "none";
+                    }, 300);
+                }
+
+                link[5].onmousemove = () => {
+                    image.src = "girl.jpg"
+                }
+
+                link[5].onmouseleave = () => {
+                    image.style.opacity = "0";
+
+                    setTimeout(() => {
+                        image.style.display = "none";
+                    }, 300);
+
+                }
+
+
+
+
+            }
+
+
+
+
+
+
+        }
+
+
+
+
+    </script>
+
+
+
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+
+
+        body {
+            overflow-x: hidden;
+        }
+
+        #carousel-container {
+            background-color: #f87a0c;
+            height: 100vh;
+        }
+
+        .carousel {
+            padding-top: 100px;
+            padding-bottom: 25px;
+            z-index: 1;
+            overflow: visible !important;
+        }
+
+
+        .carousel h1 {
+            font-size: 2.8em;
+            padding-left: 12px;
+            padding-right: 12px;
+            display: inline-block;
+            white-space: nowrap;
+            color:#fcc99d;
+            text-transform: uppercase;
+            font-family: sans-serif;
+        }
+
+        .carousel h1:hover{
+            color:white;
+           
+        }
+
+
+        #img-container {
+            position: absolute;
+            max-width: 300px;
+            max-height: 300px;
+            min-width: 300px;
+            min-height: 300px;
+            height: 300px;
+            width: 300px;
+            transform: translate(-50%, -50%) !important;
+            display: none;
+        }
+
+        img {
+            min-width: 100%;
+            min-height: 100%;
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            transition: 0.2s ease-in-out;
+            opacity: 1;
+        }
+
+        #artist-slide-1 {
+            z-index: 1000;
+        }
+
+        figure {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+
+
+        .link {
+            z-index: 500;
+        }
+
+        .flickity-viewport {
+            height: 50px !important;
+            overflow: visible !important;
+
+        }
+
+        .flickity-slider {
+            transform: translate(0%);
+        }
+    </style>
+
+
+
+</head>
+
+
+
+
+<body>
+    <!-- Flickity HTML init -->
+
+    <div id="img-container"><img id="image" src="picture.jpeg"></div>
+
+    <section id="carousel-container">
+
+
+        <div id="artist-slide-1" class="carousel">
+
+            <div id="wrap"
+                data-flickity='{ "wrapAround": true, "selectedAttraction": 0.01, "friction": 0.15, "pageDots": false, "prevNextButtons": false}'>
+
+                <h1 class="link">Mulaxamiiste Cabdi Kariim Jiir /</h1>
+                <h1 class="link">Tixdii Shareero - Abwaan Xasan Ganey / </h1>
+                <h1 class="link">Abwaan Maxamuud Maxamed Yaasiin Dheeg / </h1>
+                <h1 class="link">Nadifa Mohamed / </h1>
+                <h1 class="link">Abwaan Saado Abdi Amare / </h1>
+                <h1 class="link">Abwaan Axmed Saleebaan Bidde / </h1>
+            </div>
+        </div>
+
+        <!--
+        <div id="artist-slide-2" class="carousel">
+
+            <div id="wrap"
+                data-flickity='{ "wrapAround": true, "selectedAttraction": 0.01, "friction": 0.15, "pageDots": false, "prevNextButtons": false}'>
+                <h1>Mulaxamiiste Cabdi Kariim Jiir /</h1>
+                <h1>Tixdii Shareero - Abwaan Xasan Ganey / </h1>
+                <h1>Abwaan Maxamuud Maxamed Yaasiin Dheeg / </h1>
+                <h1>Nadifa Mohamed / </h1>
+                <h1>Abwaan Saado Abdi Amare / </h1>
+                <h1>Abwaan Axmed Saleebaan Bidde / </h1>
+            </div>
+        </div> -->
+
+
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>

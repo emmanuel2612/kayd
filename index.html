@@ -20,6 +20,8 @@
             const imageContainer = document.getElementById('img-container');
             const image = document.getElementById('image');
 
+            const flickitySlider = document.getElementById("wrap");
+
 
 
             const showImage = (e) => {
@@ -34,13 +36,18 @@
                
             }
 
+            flickitySlider.ondrag = () =>{
+                image.style.display = "none";
+                console.log("hey");
+            }
+
             var i;
             for (i = 0; i < link.length; i++) {
 
                 link[i].addEventListener('mousemove', showImage);
 
                 link[0].onmousemove = () => {
-                    image.src = "picture.jpeg";
+                    image.src = "picture1.jpg";
                         link[0].style.color = "white";
 
                         link[1].style.opacity = "0.5";
@@ -50,6 +57,8 @@
                         link[5].style.opacity = "0.5";
                        
                 }
+
+                
                 
 
                 link[0].onmouseleave = () => {
@@ -74,7 +83,7 @@
                 }
 
                 link[1].onmousemove = () => {
-                    image.src = "girl.jpg"
+                    image.src = "picture2.jpg"
 
                     link[0].style.opacity = "0.5";
                         link[2].style.opacity = "0.5";
